@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <!--Edge mode tells Internet Explorer to display content in the highest mode available.-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Temperaturer</title>
+    <link rel="stylesheet" type="text/css" href="css/temperature.css">
+</head>
+
+<body>
+    <h1>Temperaturer</h1>
+        <label>Markera städer med temperaturvärden som är större än eller lika med:
+            <input id="min-temp" type="text" />
+        </label>
+        <button id="show-value">Visa markering</button>
+        <button id="clear-formatting">Rensa tabellformatering</button>
+    <table id="temperature-table">
+        <thead> 
+        	<tr>
+	            <th>Stad</th>
+	            <th>Avläsning 1</th>
+	            <th>Avläsning 1</th>
+	            <th>Avläsning 3</th>
+	            <th>Avläsning 4</th>
+	            <th>Avläsning 5</th>
+	            <th>Medeltemperatur</th>
+	        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="city">London</td>
+                <td>6</td>
+                <td>18</td>
+                <td>12</td>
+                <td>22</td>
+                <td>23</td>
+                <td class="average-temp"></td>
+            </tr>
+            <tr>
+                <td class="city">Paris</td>
+                <td>24</td>
+                <td>25</td>
+                <td>18</td>
+                <td>19</td>
+                <td>17</td>
+                <td class="average-temp"></td>
+            </tr>
+            <tr>
+                <td class="city">Stockholm</td>
+                <td>9</td>
+                <td>10</td>
+                <td>13</td>
+                <td>7</td>
+                <td>5</td>
+                <td class="average-temp"></td>
+            </tr>
+            <tr>
+                <td class="city">Madrid</td>
+                <td>34</td>
+                <td>27</td>
+                <td>23</td>
+                <td>33</td>
+                <td>39</td>
+                <td class="average-temp"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="js/test.js"></script>
+</body>
+</html>
