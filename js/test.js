@@ -1,16 +1,18 @@
-/* 
 function tableRow() {
     var table = document.getElementById("temperature-table");
     var rows = table.getElementsByTagName("tr");
     return rows;
 }
-*/
+
 
 function calculateAverage(){
+    /*
     //saves the reference to table node
     var table = document.getElementById('temperature-table');
     //saves reference to rows node list in the table
     var rows = table.getElementsByTagName('tr');
+    */
+   rows = tableRow();
         //rotates over the rows and saves the rows' node list per line in a variable called cells
         for (var i = 1; i < rows.length; i++){
             var cells = rows[i].getElementsByTagName('td');
@@ -36,18 +38,21 @@ function averageValue(cells){
 
 function findTemperatures(){
     clearFormatting();
+    var rows = tableRow();
     //saves the input button's node element in minTemp variable
     var minTemp = parseInt(document.getElementById('min-temp').value);
-    var table = document.getElementById("temperature-table"); 
-    var rows = table.getElementsByTagName("tr"); 
-
-
-    for (var i = 1; i < rows.length; i++){
-        var cells = rows[i].getElementsByTagName("td");
-        if (matchesTemp(minTemp, cells)){
-            rows[i].className = "markedRow";
-        }
+    if (isNaN(minTemp)){
+        document.getElementById('min-temp').value = "";
+        alert("Please, enter a number");
     }
+    else {
+            for (var i = 1; i < rows.length; i++){
+                var cells = rows[i].getElementsByTagName("td");
+                if (matchesTemp(minTemp, cells)){
+                    rows[i].className = "markedRow";
+                }
+            }
+        } 
 }
 
 function matchesTemp(minTemp, cells){
@@ -66,9 +71,7 @@ function matchesTemp(minTemp, cells){
 }
 
 function clearFormatting (){
-    var table = document.getElementById("temperature-table");
-    var rows = table.getElementsByTagName("tr");
-
+    var rows = tableRow();
    for(var i = 1; i < rows.length; i++){
        rows[i].className = "";
        var cells = rows[i].getElementsByTagName("td");
