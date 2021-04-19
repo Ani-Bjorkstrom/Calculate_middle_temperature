@@ -37,7 +37,7 @@ function averageValue(cells){
 function findTemperatures(){
     clearFormatting();
     //saves the input button's node element in minTemp variable
-    var minTemp = parseInt(document.getElementsById('min-temp').value);
+    var minTemp = parseInt(document.getElementById('min-temp').value);
     var table = document.getElementById("temperature-table"); 
     var rows = table.getElementsByTagName("tr"); 
 
@@ -82,7 +82,7 @@ calculateAverage();
 var searchButton = document.getElementById("show-value");
 searchButton.addEventListener("click", findTemperatures, false);
 
-var clearButton = document.getElementsById("clear-formatting");
+var clearButton = document.getElementById("clear-formatting");
 clearButton.addEventListener("click", clearFormatting, false);
 
 
